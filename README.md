@@ -43,8 +43,11 @@ rebra - jazli + 2 = 31 - 22 + 2 = 11 / predikati + 1 = 10 + 1 = 11
 | U-W |  |  | * |  |
 
 -Ni treba test slucaj koj odi po levata strana na grafot odnosno vleguva vo jazol B izavrsuva - toa e tocno koga user=null
+
 -Ponatamu dokolku user!=null, no usernameot=null, treba da mu se dodeli username (C-D) i imame slucaj koga passwordot ne e vo red, pa se odi po patekata N,O-P-W
+
 -Ni treba slucaj koga passwordot e vo red i se vleguva vo dvata for ciklusa, no ne i vo uslovite J i L (granki J-K i L-M)
+
 -Slucaj koga passwordot e vo red i se vleguva vo prviot for ciklus i vo uslovite J i L (granki J-K i L-M), no so uslovot R se skoka do V i W
 
 5. Multiple Condition
@@ -57,6 +60,9 @@ rebra - jazli + 2 = 31 - 22 + 2 = 11 / predikati + 1 = 10 + 1 = 11
 | F | F | F | F |
 
 -Dokolku user = null, uslovot vednas ke vrati True i ke se vleze vo if-ot, nema voopsto da se razgledaat ostanatite 2 uslovi
+
 -Dokolku user!=null, ke se prover user.getPassword() i dokolku toa e null, uslovot ke vrati True i ke se vleze vo if-ot
+
 -Dokolku user!=null i user.getPassword!=null ke se proveri tretiot uslov user.getEmail() i dokolku e null, uslovot ke vrati True i ke se vleze vo if-ot
+
 -Samo vo slucaj koga site tri uslovi se false, nema da se vleze vo if-ot 
