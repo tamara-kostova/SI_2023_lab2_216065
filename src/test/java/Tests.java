@@ -13,8 +13,8 @@ public class Tests {
     @Test
     void everyBranchTest(){
         List<User> allUsers = createList();
-
         RuntimeException ex;
+        
         User nullUser = null;
         assertFalse(SILab2.function(nullUser, allUsers));
         ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullUser, allUsers));
