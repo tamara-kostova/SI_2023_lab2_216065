@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Tests {
     private List<User> createList(User... elems) {
@@ -14,14 +14,17 @@ public class Tests {
     void everyBranchTest(){
         List<User> allUsers = createList();
 
+        RuntimeException ex;
         User nullUser = null;
         assertFalse(SILab2.function(nullUser, allUsers));
+        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullUser, allUsers));
+        assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         User nullUsername = new User(null, "user", "user");
         assertFalse(SILab2.function(nullUsername, allUsers));
 
         User goodUser = new User("user", "qwertyuio*", "user@test.com");
-        assertFalse(SILab2.function(goodUser, allUsers));
+        assertTrue(SILab2.function(goodUser, allUsers));
 
         User badPassword = new User("user", "qwert yuio*", "user@test.com");
         assertFalse(SILab2.function(badPassword, allUsers));
