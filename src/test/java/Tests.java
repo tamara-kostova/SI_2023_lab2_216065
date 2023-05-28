@@ -31,22 +31,26 @@ public class Tests {
     }
     @Test
     void multipleConditionTest(){
+        List<User> allUsers = createList();
+        RuntimeException ex;
+        
         //TXX
         User nullUser = null;
-        List<User> allUsers = createList();
-        assertFalse(SILab2.function(nullUser, allUsers));
+        ex = assertThrows(RuntimeException.class, ()->SILab2.function(nullUser, allUsers);
+        assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FTX
         User nullpasswordUser = new User("user", "", "email");
-        assertFalse(SILab2.function(nullpasswordUser, allUsers));
+        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullpasswordUser,allUsers);
+        assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FFT
         User nullemailUser = new User("user", "password", "");
-        assertFalse(SILab2.function(nullemailUser, allUsers));
+        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullemailUser, allUsers);
+        assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FFF
         User goodUser = new User("user", "password", "email");
         assertFalse(SILab2.function(goodUser, allUsers));
-
     }
 }
