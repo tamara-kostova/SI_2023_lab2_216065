@@ -1,7 +1,6 @@
 # Tamara Kostova 216065
 
-![image](https://github.com/tamara-kostova/SI_2023_lab2_216065/assets/90916955/a16fd697-1f3d-4720-8920-b5700efee933)
-
+![CFG](https://github.com/tamara-kostova/SI_2023_lab2_216065/assets/90916955/b571c7ef-31a4-4985-9d1d-25b69a0087d4)
 
 3. Ciklomatska slozenost:
 
