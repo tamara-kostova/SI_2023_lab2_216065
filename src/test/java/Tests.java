@@ -23,11 +23,14 @@ public class Tests {
         User nullUsername = new User(null, "user", "user");
         assertFalse(SILab2.function(nullUsername, allUsers));
 
-        User goodUser = new User("user", "qwertyuio*", "user@test.com");
-        assertTrue(SILab2.function(goodUser, allUsers));
+        User specUser = new User("user", "qwertyuio*", "user@mail.com");
+        assertTrue(SILab2.function(specUser, allUsers));
 
-        User badPassword = new User("user", "qwert yuio*", "user@test.com");
+        User badPassword = new User("user", "qwert yuio*", "user@mail.com");
         assertFalse(SILab2.function(badPassword, allUsers));
+        
+        User gooduser = new User("user", "qwertyuio", "user@mail.com");
+        assertTrue(SILab2.function(gooduser, allUsers));
     }
     @Test
     void multipleConditionTest(){
@@ -36,17 +39,17 @@ public class Tests {
         
         //TXX
         User nullUser = null;
-        ex = assertThrows(RuntimeException.class, ()->SILab2.function(nullUser, allUsers);
+        ex = assertThrows(RuntimeException.class, ()->SILab2.function(nullUser, allUsers));
         assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FTX
         User nullpasswordUser = new User("user", "", "email");
-        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullpasswordUser,allUsers);
+        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullpasswordUser,allUsers));
         assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FFT
         User nullemailUser = new User("user", "password", "");
-        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullemailUser, allUsers);
+        ex = assertThrows(RuntimeException.class, () -> SILab2.function(nullemailUser, allUsers));
         assertTrue(ex.getMessage().contains("Mandatory information missing"));
 
         //FFF
