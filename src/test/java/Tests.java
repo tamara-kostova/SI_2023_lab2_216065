@@ -28,7 +28,7 @@ public class Tests {
 
         User badPassword = new User("user", "qwert yuio*", "user@mail.com");
         assertFalse(SILab2.function(badPassword, allUsers));
-        
+
         User gooduser = new User("user", "qwertyuio", "user@mail.com");
         assertTrue(SILab2.function(gooduser, allUsers));
     }
